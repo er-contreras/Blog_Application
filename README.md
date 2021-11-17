@@ -1,24 +1,60 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-Things you may want to cover:
+# Blog
 
-* Ruby version
+> This projects was built with ruby
 
-* System dependencies
+Additional description about the project and its features.
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby On Rails
+- Rubocop
+- Gemfile
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running follow these simple example steps.
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prerequisites
+  - Read about [RoR](https://guides.rubyonrails.org/getting_started.html) before start.
 
-* Deployment instructions
+### Setup
+  - Better have [VS Code](https://code.visualstudio.com/) installed or install the source-code editor of your preference. 
 
-* ...
+### Install
+  - In the terminal go to the folder you going to work and write the next. 
+  ```
+  git clone https://github.com/eri8-9/Blog
+  ```
+  - Next go to VS Code editor and open the folder where you installed the repository.
+### Usage
+  - Don't forget to create a branch to star working on the project.
+  - Now that you have everything set up you are ready to work.
+
+## Authors
+
+👤 **Christian Erick Contreras**
+
+- GitHub: [@eri8-9](https://github.com/eri8-9)
+- Linkedin: [LinkedIn](https://www.linkedin.com/in/christian-erick/)
+- Twitter: [@ChristianErick_](https://twitter.com/ChristianErick_)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
