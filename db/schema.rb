@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_223644) do
 
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.string "title", limit: 10
+    t.string "title"
     t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 2021_11_18_223644) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name", limit: 30
+    t.string "name"
     t.string "photo"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "posts_count", default: 0, null: false
+    t.integer "posts_count", default: 0
   end
 
   add_foreign_key "comments", "posts"

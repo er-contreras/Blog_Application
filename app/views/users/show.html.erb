@@ -5,12 +5,13 @@
     <h2>User <%= @user.name %></h2>
     <p>Number of posts: <%= @user.posts_count %></p>
   </div>
+
   <div>
     Bio:<p><%= @user.bio %>...</p>
   </div>
 
   <ul class='posts'>
-    <% @post.each do |u| %>
+    <% @posts_list.each do |u| %>
     <div class='post'>
       <h3>Post # <%= u.id %></h3>
       <p> Text:<%= u.text %></p>
