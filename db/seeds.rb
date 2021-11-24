@@ -14,9 +14,9 @@
 #   Post.create(user_id: 1, title: Faker::Book.title, text: Faker::Quote.matz)
 # end
 
-10.times do
-  Comment.create(user_id: 1, post_id: 1, text: Faker::Lorem.question)
-end
+# 10.times do
+#   Comment.create(user_id: 1, post_id: 1, text: Faker::Lorem.question)
+# end
 
 # 10.times do
 #   Like.create(user_id: 1, post_id: 1)
