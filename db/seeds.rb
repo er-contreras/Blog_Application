@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# 10.times do
+#   User.create(name: Faker::Name.name, photo: Faker::File.file_name(dir: 'path/to'), bio: Faker::Lorem.paragraphs)
+# end
+
+# 10.times do
+#   Post.create(user_id: 10, title: Faker::Book.title, text: Faker::Quote.matz)
+# end
+
+# 10.times do
+#   Comment.create(user_id: 1, post_id: 8, text: Faker::Lorem.question)
+# end
+
+# 10.times do
+#   Like.create(user_id: 1, post_id: 8)
+# end

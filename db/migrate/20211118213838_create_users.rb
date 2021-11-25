@@ -1,11 +1,11 @@
 class CreateUsers < ActiveRecord::Migration[6.1]
   def change
     create_table :users do |t|
-      t.string :name, limit: 30
+      t.string :name
       t.string :photo
       t.text :bio
       t.timestamps
-      t.integer :posts_count, default: 0, null: false
+      t.integer :posts_count, default: 0
     end
   end
 end
