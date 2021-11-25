@@ -15,9 +15,9 @@
 # end
 
 # 10.times do
-#   Comment.create(user_id: 1, post_id: 1, text: Faker::Lorem.question)
+#   Comment.create(user_id: 1, post_id: 8, text: Faker::Lorem.question)
 # end
 
 # 10.times do
-#   Like.create(user_id: 1, post_id: 1)
+#   Like.create(user_id: 1, post_id: 8)
 # end

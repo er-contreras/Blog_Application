@@ -2,7 +2,11 @@
 <ul id='users_section'>
   <% @users.each do |user| %>
     <li class='users'>
+
+      <%= link_to "/users/#{user.id}", :action => 'go' do %>
       <div class='users_pic'></div>
+      <%end%>
+
       <div class='users_name'>
           <h2>User <%= user.name %></h2>
           <p>Number of posts: <%= user.posts_count %></p>
