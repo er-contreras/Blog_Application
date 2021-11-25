@@ -9,7 +9,9 @@
     <% @posts_list.each do |post| %>
       <ul class='posts'>
         <li class='post'>
-          <h3>Post # <%= post.id %></h3>
+          <%= link_to "/users/#{@user.id}/posts/#{post.id}", :action => 'go' do %>
+            <h3>Post # <%= post.id %></h3>
+          <%end%>
           <p> Text: <%= post.text %></p>
           <div>
             Comments: <%= post.comments_count %>

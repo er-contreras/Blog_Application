@@ -11,7 +11,7 @@
 # end
 
 # 10.times do
-#   Post.create(user_id: 1, title: Faker::Book.title, text: Faker::Quote.matz)
+#   Post.create(user_id: 10, title: Faker::Book.title, text: Faker::Quote.matz)
 # end
 
 # 10.times do
