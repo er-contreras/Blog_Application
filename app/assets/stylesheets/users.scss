@@ -56,12 +56,20 @@ body {
   top: 1rem;
 }
 
-.bio,
-.post {
+.bio {
   margin: 1rem;
   max-width: 40rem;
   border: 1px solid gray;
   padding: 0.3rem;
 }
 
+.post {
+  max-width: 40rem;
+  border: 1px solid gray;
+  padding: 0.3rem;
+  margin: 0 0 1rem 0;
+}
 
+.posts {
+  max-width: 40rem;
+}
