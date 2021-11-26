@@ -7,8 +7,8 @@ Rails.application.routes.draw do
     # resources :posts, only: [:new, :create]
   end
   
-  resources :post, only: [:new, :create]
-  # get 'new_post/new', to: 'new_post#new', as: 'new_post' # new
+  # resources :post, only: [:new, :create]
+  get 'new_post/new', to: 'new_post#new', as: 'new_post' # new
   # get "/users/#{@user.id}/new", to: ''
   # get '/users', to: 'users#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
