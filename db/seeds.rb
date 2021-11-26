@@ -11,13 +11,13 @@
 # end
 
 # 10.times do
-#   Post.create(user_id: 10, title: Faker::Book.title, text: Faker::Quote.matz)
+#   Post.create(user_id: 2, title: Faker::Book.title, text: Faker::Quote.matz)
 # end
 
 # 10.times do
-#   Comment.create(user_id: 1, post_id: 8, text: Faker::Lorem.question)
+#   Comment.create(user_id: 2, post_id: 28, text: Faker::Lorem.question)
 # end
 
 # 10.times do
-#   Like.create(user_id: 1, post_id: 8)
+#   Like.create(user_id: 2, post_id: 28)
 # end
