@@ -1,13 +1,37 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-.users,
-#user {
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#users_section,
+#current_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.users {
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  margin: 0.5rem;
   align-items: center;
+  min-width: 40rem;
+}
+
+.user h2 {
+  margin: 1rem;
 }
 
 .users_pic,
@@ -17,16 +41,27 @@
   height: 5rem;
 }
 
-.users_name,
-#user h2 {
+.users_name {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  border: 1px solid gray;
+  margin: 0 0 0 1rem;
   padding: 1rem;
+  min-width: 30rem;
 }
 
-.users_name p,
-#user p {
+.users_name p {
   position: relative;
-  top: 2rem;
-  margin: 1rem;
+  top: 1rem;
 }
+
+.bio,
+.post {
+  margin: 1rem;
+  max-width: 40rem;
+  border: 1px solid gray;
+  padding: 0.3rem;
+}
+
+
