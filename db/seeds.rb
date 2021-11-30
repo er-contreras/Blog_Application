@@ -6,18 +6,51 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 10.times do
-#   User.create(name: Faker::Name.name, photo: Faker::File.file_name(dir: 'path/to'), bio: Faker::Lorem.paragraphs)
-# end
+# <--------------- Create Users --------------->
+5.times do
+  User.create(name: Faker::Name.name, photo: Faker::File.file_name(dir: 'path/to'), bio: Faker::Lorem.paragraphs)
+end
 
-# 10.times do
-#   Post.create(user_id: 10, title: Faker::Book.title, text: Faker::Quote.matz)
-# end
+# <------------------- Posts for User 1 ------------>
+5.times do
+  Post.create(user_id: 1, title: Faker::Book.title, text: Faker::Quote.matz)
+end
 
-# 10.times do
-#   Comment.create(user_id: 1, post_id: 8, text: Faker::Lorem.question)
-# end
+# <------------------- Posts for User 2 ------------>
+5.times do
+  Post.create(user_id: 2, title: Faker::Book.title, text: Faker::Quote.matz)
+end
 
-# 10.times do
-#   Like.create(user_id: 1, post_id: 8)
-# end
+# <------------------- Comments and likes for User 1 ------------>
+5.times do
+  Comment.create(user_id: 1, post_id: 5, text: Faker::Lorem.question)
+end
+
+5.times do
+  Like.create(user_id: 1, post_id: 5)
+end
+
+5.times do
+  Comment.create(user_id: 1, post_id: 4, text: Faker::Lorem.question)
+end
+
+5.times do
+  Like.create(user_id: 1, post_id: 4)
+end
+
+# <------------------- Comments and likes for User 2 ------------>
+5.times do
+  Comment.create(user_id: 2, post_id: 10, text: Faker::Lorem.question)
+end
+
+5.times do
+  Like.create(user_id: 2, post_id: 10)
+end
+
+5.times do
+  Comment.create(user_id: 2, post_id: 9, text: Faker::Lorem.question)
+end
+
+5.times do
+  Like.create(user_id: 2, post_id: 9)
+end
