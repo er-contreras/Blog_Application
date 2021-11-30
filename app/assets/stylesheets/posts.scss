@@ -2,20 +2,80 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.user {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#user_posts {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 1rem;
 }
 
-.photo {
+.posts {
+  max-width: 40rem;
+}
+
+.posts_with_comments {
+  margin: 0 0 3rem 0;
+}
+
+.text {
   border: 1px solid gray;
-  width: 5rem;
-  height: 5rem;
+  padding: 0.3rem;
 }
 
-.user p {
-  position: relative;
-  top: 2rem;
+.text .comments_likes {
+  display: flex;
+  justify-content: end;
   margin: 1rem;
+}
+
+.comments {
+  border: 1px solid gray;
+  margin: 0.3rem 0 0 0;
+  padding: 0.3rem;
+}
+
+#user_post {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto 0;
+  width: 50rem;
+}
+
+.content {
+  border: 1px solid gray;
+  padding: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.users_comments {
+  border: 1px solid gray;
+  padding: 0.3rem;
+}
+
+.comments_and_likes {
+  display: flex;
+  justify-content: end;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+#add_new_post {
+  font-size: 1.6rem;
+  margin: 1rem 0 1rem 0;
 }

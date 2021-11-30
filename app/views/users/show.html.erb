@@ -1,16 +1,17 @@
-
 <div id='current_user'>
-  <div id='user'>
-    <div class='user_pic'><%= @user.photo%></div>
-    <h2>User <%= @user.name %></h2>
-    <p>Number of posts: <%= @user.posts_count %></p>
+  <div class='users'>
+    <div class='users_pic'></div>
+    <div class='users_name'>
+      <h2>User <%= @user.name %></h2>
+      <p>Number of posts: <%= @user.posts_count %></p>
+    </div>
   </div>
 
-  <div>
-    Bio:<p><%= @user.bio %>...</p>
+  <div class='bio'>
+    Bio: <p><%= @user.bio %></p>
   </div>
 
-  <ul class='posts'>
+  <div class='posts'>
     <% @posts_list.each do |u| %>
     <div class='post'>
       <h3>Post # <%= u.id %></h3>
@@ -21,8 +22,8 @@
       </div>
     </div>
     <% end %>
-  </ul>
-  
+  </div>
+
   <div class="btn-container">
     <%= link_to "See all posts", "#{@user.id}/posts", class: "button" %>
   </div>
