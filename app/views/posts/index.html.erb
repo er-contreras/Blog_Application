@@ -8,7 +8,11 @@
   </div>
 
   <div id='add_new_post'>
-    <%= link_to 'Add new post', "/users/#{@user.id}/posts/new"%>
+    <%= link_to 'Add new post', "/posts/new"%>
+  </div>
+
+  <div class='flash_success'>
+    <%= flash[:success] %>
   </div>
 
   <div class='posts'>

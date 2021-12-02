@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :current_user, only: [:create]
+
   def index
     @user = User.find(params[:user_id])
     @posts_list = @user.recent_posts
@@ -14,23 +16,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-
-    # if post.save
-    #   redirect_to action: :index
-    # else
-    #   redirect_to action: :new
-    # end
-
-    # flash[:notice] = 'Post was successfully created' if @post.save respond_with(@post)
+    @post = @current_user.posts.new(post_params)
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to :index, notice: 'Post was successfully created.' }
-        format.json { render :show, status: :created, location: @post }
+        flash[:success] = 'Post saved successfully'
+        format.html { redirect_to "/users/#{@current_user.id}/posts" }
       else
+        flash.now[:error] = 'Error: Post could not be saved'
         format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
   end

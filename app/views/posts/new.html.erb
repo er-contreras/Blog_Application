@@ -1,13 +1,17 @@
-<div id='new_post'>
-  <h1>Hello there!</h1>
+<h1 class='hello_error'><%= flash[:error] %></h1>
 
-  <div class='form'>
-    <%= form_for Post.new, url: {action: :create} do |form| %>
-      <%= form.label :title %>
-      <%= form.text_field :title %>
-      <%= form.label :text %>
-      <%= form.text_area :text %>
-      <%= form.submit "Add new post" %>
-    <% end %>
+<%= form_with model: @post do |f| %>
+  <div class='title_field'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
   </div>
-</div>
+
+  <div class='text_tarea'>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+
+  <div class='submit_button'>
+    <%= f.submit "Add new post" %>
+  </div>
+<% end %>
