@@ -1,11 +1,5 @@
 <div id='user_posts'>
-  <div class='users'>
-    <div class='users_pic'></div>
-    <div class='users_name'>
-      <h2>User <%= @user.name %></h2>
-      <p>Number of posts: <%= @user.posts_count %></p>
-    </div>
-  </div>
+  <%= render 'posts/the_user' %>
 
   <div id='add_new_post'>
     <%= link_to 'Add new post', "/posts/new"%>
