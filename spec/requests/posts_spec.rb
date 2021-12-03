@@ -7,7 +7,6 @@ RSpec.describe 'Posts', type: :request do
   end
 
   describe 'GET /index' do
-    # before(:each) { get '/users/:user_id/posts' }
     before(:each) { get user_posts_path(@user, @post) }
 
     it 'is a success' do

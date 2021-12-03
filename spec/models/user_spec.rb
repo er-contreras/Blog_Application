@@ -6,7 +6,12 @@ RSpec.describe User, type: :model do
   before { subject.save }
 
   it 'name should be present' do
-    subject.title = nil
+    subject.name = nil
+    expect(subject).to_not be_valid
+  end
+
+  it 'PostsCounter must be an integer greater than or equal to zero' do
+    subject.posts_count = nil
     expect(subject).to_not be_valid
   end
 end
