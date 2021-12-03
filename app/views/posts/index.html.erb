@@ -10,7 +10,7 @@
   </div>
 
   <div class='see_posts_user'>
-    <% @posts_list.each do |post| %>
+    <% @posts.each do |post| %>
     <div class='posts_with_comments'>
       <div class='text'>
         <%= link_to "/users/#{@user.id}/posts/#{post.id}", :action => 'go' do %>
