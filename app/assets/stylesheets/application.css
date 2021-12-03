@@ -58,14 +58,18 @@ form {
   border: none;
 }
 
-.hello_error {
+.hello_error,
+.comment_flash_error {
   margin: 2rem auto;
   text-align: center;
   color: red;
 }
 
-.flash_success {
+.flash_success,
+.comment_flash {
   color: green;
+  margin: 1rem auto 0 auto;
+  font-size: 3rem;
 }
 
 .title_field,
