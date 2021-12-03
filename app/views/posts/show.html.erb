@@ -22,5 +22,13 @@
 		<%end%>
 	</div>
 
+	<div class='comment_flash_error'>
+  	<%= flash[:error] %>
+	</div>
+
+	<div class='comment_flash'>
+  	<%= flash[:success] %>
+	</div>
+
 	<%= render 'comments/form'%>
 </div>
