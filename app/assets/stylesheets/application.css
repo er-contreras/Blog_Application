@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -12,4 +13,77 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem auto;
+  justify-content: center;
+  align-items: center;
+}
+
+#post_title,
+#post_text {
+  width: 30rem;
+}
+
+#post_text {
+  height: 6rem;
+}
+
+.title_field {
+  display: flex;
+  flex-direction: column;
+}
+
+.text_tarea {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.hello_error {
+  margin: 2rem auto;
+  text-align: center;
+  color: red;
+}
+
+.flash_success {
+  color: green;
+}
+
+.title_field,
+.text_tarea {
+  margin: 0.3rem;
+  font-size: 2rem;
+}
+
+.submit_button input {
+  background-color: rgb(0, 164, 196);
+  color: rgb(79, 79, 79);
+  width: 30rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.submit_button input:active {
+  background-color: rgb(0, 184, 220);
+}

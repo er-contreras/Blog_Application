@@ -22,7 +22,7 @@ body {
   align-items: center;
 }
 
-.posts {
+.see_posts_user {
   max-width: 40rem;
 }
 
@@ -54,6 +54,11 @@ body {
   width: 50rem;
 }
 
+#user_post h2 {
+  margin: 2rem 0 0 0;
+  text-align: center;
+}
+
 .content {
   border: 1px solid gray;
   padding: 1rem;
@@ -70,6 +75,10 @@ body {
   justify-content: end;
 }
 
+.thumbs_up {
+  margin: 0 0.5rem;
+}
+
 .top {
   display: flex;
   justify-content: space-between;
@@ -78,4 +87,8 @@ body {
 #add_new_post {
   font-size: 1.6rem;
   margin: 1rem 0 1rem 0;
+}
+
+.fa-thumbs-up:hover {
+  transform: scale(1.2);
 }
