@@ -11,9 +11,9 @@
   </head>
 
   <body>
+    <div class='link_to_sign'>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div class='link_to_sign'>
       <% if user_signed_in?%>
         <%= button_to 'Sign Out', "/users/sign_out", method: :delete %>
         <%= link_to 'Edit Account', "/users/edit" %>
