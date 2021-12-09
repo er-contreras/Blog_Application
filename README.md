@@ -41,6 +41,12 @@ To get a local copy up and running follow these simple example steps.
 - Linkedin: [LinkedIn](https://www.linkedin.com/in/christian-erick/)
 - Twitter: [@ChristianErick_](https://twitter.com/ChristianErick_)
 
+👤 **Tiago Rahal Aires**
+
+- GitHub: [@tiagorahal](https://github.com/tiagorahal)
+- Twitter: [@RahalAires](https://twitter.com/RahalAires)
+- LinkedIn: [Tiago Rahal Aires](https://linkedin.com/tiagorahal)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
