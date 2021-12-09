@@ -1,7 +1,4 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :current_user, only: [:create]
-
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -18,12 +15,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @current_user.posts.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     respond_to do |format|
       if @post.save
         flash[:success] = 'Post saved successfully'
-        format.html { redirect_to "/users/#{@current_user.id}/posts" }
+        format.html { redirect_to "/users/#{current_user.id}/posts" }
       else
         flash.now[:error] = 'Error: Post could not be saved'
         format.html { render :new }

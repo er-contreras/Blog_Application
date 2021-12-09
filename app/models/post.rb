@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user, counter_cache: true
+  belongs_to :user
 
   has_many :comments
   has_many :likes
@@ -13,8 +13,8 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
-  def update_posts_counter
-    posts_counter = user.posts.count
-    user.update(posts_count: posts_counter)
-  end
+  # def update_posts_counter
+  #   posts_counter = user.posts.count
+  #   user.update(post_count: posts_counter)
+  # end
 end
