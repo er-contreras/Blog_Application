@@ -91,3 +91,10 @@ form {
 .submit_button input:active {
   background-color: rgb(0, 184, 220);
 }
+
+/* Sign in */
+
+.link_to_sign {
+  margin: 3rem 0 0 0;
+  font-size: 2rem;
+}
