@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
-    confirmations: 'confirmations'
-  }
-
-  root 'users#index'
-
-  resources :users, only: [:show, :index] do
-    resources :posts, only: [:show, :index] do
-      resources :comments, only: [:create]
-      resources :likes, only: [:create]
+  devise_for :users
+  root "users#index"
+  
+  resources :users, only: %i[index show] do
+    resources :posts, only: %i[index show create destroy] do
+      resources :comments, only: %i[new create destroy]
     end
   end
 
-  resources :posts, only: [:new, :create]
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'new', to: 'posts#new', as: 'new'
+  put '/post/:id/like', to: 'likes#create', as: 'like'
 end
