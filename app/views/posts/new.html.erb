@@ -1,17 +1,19 @@
-<h1 class='hello_error'><%= flash[:error] %></h1>
-
-<%= form_with model: @post do |f| %>
-  <div class='title_field'>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<h1> Create a posts </h1>
+<section class="formContainer">
+<%= form_with model: [@user, @user.posts.build] do |f| %>
+  <div>
+  <%= f.label :title %><br>
+  <%= f.text_field :title%>
   </div>
 
-  <div class='text_tarea'>
-    <%= f.label :text %>
-    <%= f.text_area :text %>
+  <div>
+  <%= f.label :text %><br>
+  <%= f.text_area :text%>
   </div>
 
-  <div class='submit_button'>
-    <%= f.submit "Add new post" %>
-  </div>
+  <%= f.submit "Create a post" %>
+
+<% end %>
+<% flash.each do |type, message| %>
+    <div class="notification"> <%= message %> </div>
 <% end %>

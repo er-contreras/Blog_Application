@@ -1,9 +1,0 @@
-<h2>Add Comment</h2>
-
-<%= form_with model: [@user, @post, @comment], class: 'form' do |f| %>
-  <%= f.text_field :text,
-  placeholder: 'Write something...',
-  required:true,
-  class: 'input-comment' %>
-  <%= f.submit class: 'submit' %>
-<% end %>
