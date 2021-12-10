@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>BlogRails</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,15 +11,9 @@
   </head>
 
   <body>
-    <div class='link_to_sign'>
+    <%= render 'shared/nav_bar'%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-      <% if user_signed_in?%>
-        <%= button_to 'Sign Out', "/users/sign_out", method: :delete %>
-      <% else %>
-        <%= link_to 'Sign In', "/users/sign_in" %>
-      <% end %>
-    </div>
     <%= yield %>
   </body>
 </html>

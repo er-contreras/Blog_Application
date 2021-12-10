@@ -1,36 +1,41 @@
 class PostsController < ApplicationController
+  # load_and_authorize_resource
+  before_action :authenticate_user!, only: %i[new create delete]
+
   def index
     @user = User.find(params[:user_id])
-    @posts = @user.posts.includes(:comments)
+    @post = @user.posts.includes(:comments)
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
-    @comment = Comment.new
   end
 
   def new
+    @user = current_user
     @post = Post.new
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    cu = current_user
+    @post_user = User.find(params[:user_id])
+    @post = cu.posts.new(params.require(:post).permit(:title, :text))
+    @post.comments_counter = 0
+    @post.likes_counter = 0
 
-    respond_to do |format|
-      if @post.save
-        flash[:success] = 'Post saved successfully'
-        format.html { redirect_to "/users/#{current_user.id}/posts" }
-      else
-        flash.now[:error] = 'Error: Post could not be saved'
-        format.html { render :new }
-      end
+    if @post.save
+      flash[:notice] = 'Post saved!!'
+      redirect_to user_post_path(cu, @post)
+    else
+      flash[:error] = @post.errors.full_messages[0]
+      redirect_to new_path
     end
   end
 
-  private
-
-  def post_params
-    params.require(:post).permit(:title, :text)
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to root_path
   end
 end
