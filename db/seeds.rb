@@ -1,56 +1,107 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# require 'faker'
 
-# <--------------- Create Users --------------->
-5.times do
-  User.create(name: Faker::Name.name, photo: Faker::File.file_name(dir: 'path/to'), bio: Faker::Lorem.paragraphs)
+# (1..20).each do |id|
+#   User.create!(
+#       id: id, 
+#       name: Faker::Name.name,
+#       photo: Faker::Lorem.sentence,
+#       bio: Faker::Lorem.paragraph(sentence_count: 15, supplemental: true),
+#       post_counter: 0,
+#   )
+# end
+
+# (1..100).each do |id|
+#   Post.create!(
+#       id: id,
+#       author_id: rand(1..20),
+#       title: Faker::Book.title,
+#       text: Faker::Lorem.paragraph(sentence_count: 5, supplemental: true),
+#       comments_counter: 0,
+#       likes_counter: 0,
+#   )
+# end
+
+# (1..100).each do |id|
+#   Comment.create!(
+#       id: id,
+#       post_id: rand(1..100),
+#       author_id: rand(1..20),
+#       text: Faker::Lorem.paragraph,
+#   )
+# end
+
+# (1..100).each do |id|
+#   Like.create!(
+#       id: id,
+#       author_id: rand(1..20),
+#       post_id: rand(1..100),
+#   )
+# end
+
+# User.all.each do |u|
+#   u.post_counter = u.posts.count
+#   u.save
+# end
+
+# Post.all.each do |p|
+#   p.comments_counter = p.comments.count
+#   p.likes_counter = p.likes.count
+#   p.save
+# end
+
+# ActiveRecord::Base.connection.tables.each do |t|
+#   ActiveRecord::Base.connection.reset_pk_sequence!(t)
+# end
+
+user = User.new(
+  email: 'oli@gmail.com',
+  password: '123456',
+  password_confirmation: '123456',
+  name: 'Oliver',
+  role: 'admin'
+)
+user.skip_confirmation!
+user.save!
+
+user = User.new(
+  email: 'arthur@gmail.com',
+  password: '123456',
+  password_confirmation: '123456',
+  name: 'Arthur',
+  role: 'default'
+)
+user.skip_confirmation!
+user.save!
+
+user = User.new(
+  email: 'gabriel@gmail.com',
+  password: '123456',
+  password_confirmation: '123456',
+  name: 'Gabriel',
+  role: 'default'
+)
+user.skip_confirmation!
+user.save!
+
+(1..10).each do |id|
+  Post.create!(
+      id: id,
+      author_id: rand(1..3),
+      title: Faker::Book.title,
+      text: Faker::Lorem.paragraph(sentence_count: 5, supplemental: true),
+      comments_counter: 0,
+      likes_counter: 0,
+  )
 end
 
-# <------------------- Posts for User 1 ------------>
-5.times do
-  Post.create(user_id: 1, title: Faker::Book.title, text: Faker::Quote.matz)
+(1..10).each do |id|
+  Comment.create!(
+      id: id,
+      post_id: rand(1..10),
+      author_id: rand(1..3),
+      text: Faker::Lorem.paragraph,
+  )
 end
-
-# <------------------- Posts for User 2 ------------>
-5.times do
-  Post.create(user_id: 2, title: Faker::Book.title, text: Faker::Quote.matz)
-end
-
-# <------------------- Comments and likes for User 1 ------------>
-5.times do
-  Comment.create(user_id: 1, post_id: 5, text: Faker::Lorem.question)
-end
-
-5.times do
-  Like.create(user_id: 1, post_id: 5)
-end
-
-5.times do
-  Comment.create(user_id: 1, post_id: 4, text: Faker::Lorem.question)
-end
-
-5.times do
-  Like.create(user_id: 1, post_id: 4)
-end
-
-# <------------------- Comments and likes for User 2 ------------>
-5.times do
-  Comment.create(user_id: 2, post_id: 10, text: Faker::Lorem.question)
-end
-
-5.times do
-  Like.create(user_id: 2, post_id: 10)
-end
-
-5.times do
-  Comment.create(user_id: 2, post_id: 9, text: Faker::Lorem.question)
-end
-
-5.times do
-  Like.create(user_id: 2, post_id: 9)
-end
+ActiveRecord::Base.connection.tables.each do |t|
+ActiveRecord::Base.connection.reset_pk_sequence!(t)
+end 
