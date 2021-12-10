@@ -17,23 +17,16 @@ Additional description about the project and its features.
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-  - Read about [RoR](https://guides.rubyonrails.org/getting_started.html) before start.
+### Clone the repo
+  `https://github.com/eri8-9/Blog_Application.git`
 
-### Setup
-  - Better have [VS Code](https://code.visualstudio.com/) installed or install the source-code editor of your preference. 
+### Install gem files
+  `bundle install`
 
-### Install
-  - In the terminal go to the folder you going to work and write the next. 
-  ```
-  git clone https://github.com/eri8-9/Blog
-  ```
-  - Next go to VS Code editor and open the folder where you installed the repository.
-### Usage
-  - Don't forget to create a branch to star working on the project.
-  - Now that you have everything set up you are ready to work.
+### Run server
+  `rails server`
 
-## Authors
+### Authors
 
 👤 **Christian Erick Contreras**
 
