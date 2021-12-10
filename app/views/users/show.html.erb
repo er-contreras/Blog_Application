@@ -1,13 +1,20 @@
-<div id='current_user'>
-  <%= render 'users/the_user'%>
-
-  <div class='bio'>
-    Bio: <p><%= @user.bio %></p>
-  </div>
-
-  <%= render 'users/list_post' %>
-
-  <div class="btn-container">
-    <%= link_to "See all posts", "#{@user.id}/posts", class: "button" %>
-  </div>
-</div>
+<section class="showView">
+  <%= render 'shared/user_card', user: @user %>
+  
+  <ul class="postsList">
+    <li class="bio">
+      <h2> Bio </h2>
+      <p>
+        <%= @user.bio %>
+      </p>
+    </li>
+      <% @posts.includes([:author]).each do |p| %>
+      <%= link_to (user_post_path(p.author, p)) do %>
+        <li>
+          <%= render 'shared/post_card', post: p, callback: :take_five_recent%>
+        </li>
+        <% end %>
+      <% end %>
+      <%= button_to "Show all", user_posts_path(@user.id), :method => :get %>
+  </ul>
+</section>

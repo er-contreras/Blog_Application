@@ -1,34 +1,8 @@
-<div id='user_post'>
-	<div class='content'>
-		<div class='top'>
-			<h3><%= @post.title %> by <%= @user.name %></h3>
-				<div class='comments_and_likes'>
-					<p>Comments: <%= @post.comments_count %></p>
-					<p class='thumbs_up'>
-						<%= link_to "/users/#{@user.id}/posts/#{@post.id}/likes", method: :post do %>
-						<i class='fa fa-thumbs-up'></i>
-						<% end %>
-						Likes:
-						<%= @post.likes_count %>
-					</p>
-				</div>
-		</div>
-		<p><%= @post.text %></p>
-	</div>
-
-	<div class='users_comments'>
-		<% @post.comments.each do |comment| %>
-			<p>Username: <%= comment.text %></p>
-		<%end%>
-	</div>
-
-	<div class='comment_flash_error'>
-  	<%= flash[:error] %>
-	</div>
-
-	<div class='comment_flash'>
-  	<%= flash[:success] %>
-	</div>
-
-	<%= render 'comments/form'%>
-</div>
+<section class="showView">
+  <%= render 'shared/user_card', user: @user %>
+  <%= render 'shared/post_card', post: @post, callback: :show_all%>
+  <%= render 'shared/add_comment' %>
+  <% flash.each do |type, message| %>
+    <div class="notification"> <%= message %> </div>
+  <% end %>
+</section>

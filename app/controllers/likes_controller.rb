@@ -1,24 +1,21 @@
 class LikesController < ApplicationController
-  before_action :current_user, only: [:create]
+  before_action :authenticate_user!, only: %i[create]
 
   def create
-    @post = Post.find(params[:post_id])
+    user = current_user
+    post = Post.find(params[:id])
 
-    if already_liked?
-      redirect_to user_post_path(@current_user.id, @post)
+    Like.create(author_id: current_user.id, post_id: post.id)
+
+    if Like.exists?(author_id: current_user.id)
+      flash[:notice] = 'Like saved!'
     else
-      @like = @current_user.likes.new
-      @like.user_id = @current_user.id
-      @like.post_id = params[:post_id]
-
-      if @like.save
-        @like.update_likes_counter
-        redirect_to user_post_path(@current_user.id, @post)
-      end
+      flash[:error] = 'Ups something went wrong!'
     end
+    redirect_to user_post_path(user, post)
   end
 
   def already_liked?
-    Like.where(user_id: @current_user.id, post_id: @post.id).exists?
+    Like.where(author_id: @user.id, id: @post.id).exists?
   end
 end

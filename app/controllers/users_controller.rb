@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   def index
-    @users = current_user
+    @users = User.all
   end
 
   def show
     @user = User.find(params[:id])
-    @posts_list = @user.recent_posts
+    @posts = @user.take_three_recent
+    @number = params[:number] unless params[:limit].nil?
   end
 end
