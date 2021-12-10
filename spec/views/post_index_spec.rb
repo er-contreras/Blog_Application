@@ -8,6 +8,7 @@ RSpec.describe 'Index page', type: :feature do
                      post_counter: 0)
     @user.skip_confirmation!
     @user.save!
+
     @post1 = Post.create(title: 'article 1', text: 'My text', author_id: @user.id, comments_counter: 0,
                          likes_counter: 0)
     @post2 = Post.create(title: 'article 2', text: 'My text', author_id: @user.id, comments_counter: 0,
@@ -49,6 +50,16 @@ RSpec.describe 'Index page', type: :feature do
       visit user_posts_path(@user)
       first(:link, 'Show Post').click
       assert_current_path(user_post_path(@user, @post1))
+    end
+
+    it 'how many comments a post has' do
+      visit user_posts_path(@user)
+      expect(page).to have_content('1')
+    end
+
+    it 'how many likes a post has' do
+      visit user_posts_path(@user)
+      expect(page).to have_content('0')
     end
   end
 end
