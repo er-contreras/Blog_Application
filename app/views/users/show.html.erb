@@ -13,6 +13,6 @@
           <%= render 'shared/post_card', post: p, callback: :take_five_recent%>
         </li>
         <% end %>
-      <%= link_to "Show all", user_posts_path(@user.id), :method => :get %>
+      <%= button_to "Show all", user_posts_path(@user.id), :method => :get %>
   </ul>
 </section>
